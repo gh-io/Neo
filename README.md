@@ -1,4 +1,5 @@
 
+```xlsl
 
                  ┌──────────────┐
                  │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
@@ -218,3 +219,4 @@ If you want, I can **sketch a full blueprint for a Neurobot**, including:
 * Arduino/Pi + AI code examples
 * Learning algorithms ready to run
 
+```
