@@ -1,0 +1,23 @@
+// Initialize sensors
+distance_sensor front
+temp_sensor environment
+camera vision
+
+// Initialize motors
+motor left_wheel
+motor right_wheel
+
+// Main exploration loop
+loop:
+    data = read_sensors([front, environment, vision])
+    processed = send_to_ai(data, EDQ)
+    decision = receive_decision(SERAI, processed)
+    
+    if decision.path_clear:
+        move_motor(left_wheel, decision.left_speed)
+        move_motor(right_wheel, decision.right_speed)
+    else:
+        turn_robot(decision.turn_angle)
+    
+    train_on_feedback(data, decision)
+    sync_with_nearby_robots()

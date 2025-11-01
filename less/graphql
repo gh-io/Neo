@@ -1,0 +1,22 @@
+Neurobot/
+│
+├── arduino/
+│   └── motor_control.ino       # Arduino sketch for motors/servos
+│
+├── sensors/
+│   ├── lidar_reader.py         # LiDAR reading & preprocessing
+│   ├── camera_reader.py        # Camera capture & preprocessing
+│   └── imu_reader.py           # IMU & distance sensor integration
+│
+├── ai/
+│   ├── ann_model.py            # ANN strategic decision module
+│   ├── snn_model.py            # Reflexive SNN module
+│   ├── rl_trainer.py           # DQN / PPO training loop
+│   └── config.py               # Model & sensor config
+│
+├── swarm/
+│   └── mqtt_comm.py            # Swarm communication via MQTT
+│
+├── main.py                     # Integration script, sensor → AI → motors
+├── requirements.txt            # Python dependencies
+└── README.md                   # Setup instructions

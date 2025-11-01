@@ -1,0 +1,14 @@
+# Minimal starter requirements for Brain project
+numpy
+opencv-python-headless
+scikit-learn
+pyyaml
+nengo
+pyserial
+paho-mqtt
+torch
+torchvision
+torchaudio
+matplotlib
+pillow
+ruamel.yaml

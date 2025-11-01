@@ -1,0 +1,38 @@
+# Dockerfile.jetson - Jetson (L4T / JetPack) friendly Dockerfile template
+# NOTE: Pick appropriate base image for your JetPack version.
+# Example base image (adjust tag to your JetPack): nvcr.io/nvidia/l4t-base:r35.2.1
+# Building on-device: you can instead build with local apt repos and nvpmodel / jetpack-installed packages.
+
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-base:r35.2.1
+FROM ${BASE_IMAGE}
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+ENV BRAIN_ENV=jetson
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 python3-venv python3-pip python3-distutils build-essential cmake git wget \
+    libssl-dev libffi-dev ffmpeg libglib2.0-0 && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY . /app
+
+# Create venv and install pure-Python deps
+RUN python3 -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip setuptools wheel && \
+    if [ -f "/app/requirements.txt" ]; then /opt/venv/bin/pip install -r /app/requirements.txt; fi && \
+    /opt/venv/bin/pip install -e /app || true
+
+ENV PATH="/opt/venv/bin:${PATH}"
+
+# On Jetson, install PyTorch and torchvision from NVIDIA-provided wheels or via pip with appropriate wheel URL.
+# Do not use the standard pip CPU/GPU wheels here — follow NVIDIA instructions:
+# Example (on device or in container with apt repos available):
+# RUN /opt/venv/bin/pip install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v*/torch \
+#     torch==<jetson-compatible-version> torchvision==<jetson-compatible-version>
+
+# Keep entrypoint similar
+RUN mkdir -p /app/logs
+EXPOSE 8080
+CMD ["bash", "-lc", "if [ -f ./main.py ]; then python3 main.py || python3 simulate.py || bash; else bash; fi"]

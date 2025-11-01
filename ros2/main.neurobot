@@ -1,0 +1,36 @@
+import serial
+import torch
+from ai.ann_model import ANNModel
+from ai.snn_model import ReflexSNN
+from sensors.lidar_reader import get_sensor_vector
+from swarm.mqtt_comm import publish_state
+
+ser = serial.Serial('/dev/ttyUSB0', 115200)
+actions = ["FORWARD", "LEFT", "RIGHT", "STOP"]
+
+ann_model = ANNModel()
+snn_model = ReflexSNN()
+optimizer = torch.optim.Adam(ann_model.parameters(), lr=0.001)
+criterion = torch.nn.MSELoss()
+
+try:
+    while True:
+        sensor_vec = torch.tensor([get_sensor_vector()])
+        ann_output = ann_model(sensor_vec)
+        action_idx = torch.argmax(ann_output).item()
+        action = actions[action_idx]
+        reflex_output = snn_model(sensor_vec).detach().numpy()
+        ser.write((action + "\n").encode())
+        reward = 1 if sensor_vec[0, -1] > 0.1 else -1
+        target = torch.zeros_like(ann_output)
+        target[0, action_idx] = reward
+        optimizer.zero_grad()
+        loss = criterion(ann_output, target)
+        loss.backward()
+        optimizer.step()
+        position = [0,0,0]
+        publish_state(position, sensor_vec[0, :-1].tolist())
+        print(f"Action: {action}, Reward: {reward}, Reflex: {reflex_output}")
+except KeyboardInterrupt:
+    ser.close()
+    print("Shutting down Neurobot")

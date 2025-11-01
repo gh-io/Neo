@@ -1,0 +1,9 @@
+import paho.mqtt.client as mqtt
+
+MQTT_BROKER = "192.168.1.100"
+client = mqtt.Client("neurobot01")
+client.connect(MQTT_BROKER)
+
+def publish_state(position, obstacles):
+    msg = f"{position[0]},{position[1]},{position[2]};{obstacles}"
+    client.publish("neurobot/swarm", msg)

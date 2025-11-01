@@ -1,0 +1,13 @@
+[LiDAR / Camera / IMU Sensors] ---> ROS2 Nodes ---> SLAM Mapping
+                               |
+                               v
+                          ANN / RL / SNN
+                               |
+                               v
+                         Motor Node / Arduino
+                               |
+                               v
+                        Real-world Movement
+                               |
+                               v
+                         Swarm Node <---> Other Neurobots
