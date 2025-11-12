@@ -182,3 +182,6 @@ node -v # Should print "v24.11.0".
 
 # Verify npm version:
 npm -v # Should print "11.6.1".
+
+curl -X POST http://localhost:8000/upload-data -H "Content-Type: application/json" \
+-d '[{"text": "NeoMind learns patterns fast", "label": "AI"}, {"text": "Training makes me smarter", "label": "AI"}]'
