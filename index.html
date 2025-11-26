@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeomindAI</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #0d0d0d;
+            color: #ffffff;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0d0d0d;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            z-index: 999;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.95) 100%
+            );
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00eaff, #33c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            background: #00cfff;
+            color: #0d0d0d;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #00a8d6;
+        }
+
+        .section {
+            padding: 100px 40px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 18px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        footer {
+            padding: 20px 40px;
+            text-align: center;
+            background: #0d0d0d;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>NeomindAI</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#start">Get Started</a>
+    </nav>
+</header>
+
+<section class="hero animate__animated animate__fadeIn">
+    <h2>Think Beyond Intelligence</h2>
+    <p>NeomindAI is your gateway to next-generation cognition — 
+       an engine built to analyze, predict, adapt, and evolve with you.
+    </p>
+    <a href="#start"><button class="btn">Launch Neomind</button></a>
+</section>
+
+<section id="about" class="section">
+    <h3>What is NeomindAI?</h3>
+    <p>
+        NeomindAI is a multi-layer artificial cognition system designed to fuse 
+        deep reasoning, dynamic memory, sensory pipelines, and autonomous decision-making. 
+        The essence is simple: an AI that not only responds — but **understands**.
+    </p>
+</section>
+
+<section id="features" class="section">
+    <h3>Core Capabilities</h3>
+    <p>
+        • Contextual reasoning and self-adaptive logic.<br>
+        • Neural embeddings for memory compression.<br>
+        • Real-time inference with low-latency response.<br>
+        • Modular architecture for plugins and agents.<br>
+        • End-to-end encryption for data safety.<br>
+        • Integrates seamlessly with Brain AI, KPhi3, Omni-mind, and more.
+    </p>
+</section>
+
+<section id="start" class="section">
+    <h3>Get Started</h3>
+    <p>Clone the repo, install dependencies, and unleash the cognitive engine.</p>
+    <pre style="background:#111;padding:20px;border-radius:8px;text-align:left;max-width:800px;margin:auto;color:#00eaff;">
+git clone https://github.com/QUBUHUB-incs/NeomindAI.git
+cd NeomindAI
+npm install
+npm run dev
+    </pre>
+</section>
+
+<footer>
+    © 2025 NeomindAI • Built by QUBUHUB • All Rights Reserved.
+</footer>
+
+</body>
+</html>
