@@ -1,11 +1,13 @@
 ---
+tittle: NEOMIND
 InputLayer: ** Receives raw sensor data
 SensoryCortexModule: ** Processes vision, audio, tactile data
 DecisionModule: ** Chooses actions using reinforcement learning
 MotorCortexModule: ** Converts decisions to motor commands
-MemoryModule:** Short-term (RAM) + long-term (flash/SSD), stores learned patterns
+MemoryModule: ** Short-term (RAM) long-term (flash/SSD), stores learned patterns
 LearningModule: ** Adjusts weights using Hebbian rules or gradient-based learning
 ---
+
 </p>
 
                  ┌──────────────┐
