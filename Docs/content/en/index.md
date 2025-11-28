@@ -1,8 +1,12 @@
 ---
-
- BRAIN
-
+InputLayer: ** Receives raw sensor data
+SensoryCortexModule: ** Processes vision, audio, tactile data
+DecisionModule: ** Chooses actions using reinforcement learning
+MotorCortexModule: ** Converts decisions to motor commands
+MemoryModule:** Short-term (RAM) + long-term (flash/SSD), stores learned patterns
+LearningModule: ** Adjusts weights using Hebbian rules or gradient-based learning
 ---
+</p>
 
                  ┌──────────────┐
                  │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
@@ -22,9 +26,9 @@
                         │
         ┌───────────────┴───────────────┐
         ▼                               ▼
-  Wheels / Motors                 Servo Arms / Grippers
-  LED Feedback / Sounds           Optional Drone Propellers
-
+    Wheels / Motors                 Servo Arms / Grippers
+    LED Feedback / Sounds           Optional Drone Propellers
+</p>
 
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/434924d0-570c-4c38-adb1-22381e720655" />|
@@ -46,11 +50,11 @@ We'll combine **neuromorphic principles** with AI/ML for practical robotics.
 ### **B. Neural Network Layers**
 
 1. **Input Layer:** Receives raw sensor data
-2. **Sensory Cortex Module:** Processes vision, audio, tactile data
+2. **Sensory Cortex Module: ** Processes vision, audio, tactile data
 3. **Decision Module:** Chooses actions using reinforcement learning
-4. **Motor Cortex Module:** Converts decisions to motor commands
+4. **Motor Cortex Module: ** Converts decisions to motor commands
 5. **Memory Module:** Short-term (RAM) + long-term (flash/SSD), stores learned patterns
-6. **Learning Module:** Adjusts weights using Hebbian rules or gradient-based learning
+6. **Learning Module: ** Adjusts weights using Hebbian rules or gradient-based learning
 
 > **Extra:** Use PyTorch or TensorFlow for ANN, or Nengo for spiking neural networks.
 
@@ -940,7 +944,7 @@ cd Brain
 python -m venv venv
 source venv/bin/activate  # (Windows: venv\Scripts\activate)
 pip install -r requirements.txt
-
+```
 
 ⸻
 
@@ -963,16 +967,14 @@ brain/
  ├── api/            # Optional FastAPI endpoints
  ├── utils/          # Helper utilities
  └── train/          # Training and model modules
+```
 
-
-⸻
 
 📜 License
 
 This project is licensed under the MIT License.
 © 2025 Seriki Yakub (KUBU LEE). All rights reserved.
 
----
 
 ## **2️⃣ ARCHITECTURE.md**
 
