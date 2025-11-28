@@ -1,12 +1,45 @@
 ---
-tittle: NEOMIND
-InputLayer: ** Receives raw sensor data
-SensoryCortexModule: ** Processes vision, audio, tactile data
-DecisionModule: ** Chooses actions using reinforcement learning
-MotorCortexModule: ** Converts decisions to motor commands
-MemoryModule: ** Short-term (RAM) long-term (flash/SSD), stores learned patterns
-LearningModule: ** Adjusts weights using Hebbian rules or gradient-based learning
+title: NEOMIND / Neurobot AI
 ---
+
+# 🧠 Neurobot Blueprint
+
+## Neural Brain Architecture
+- **InputLayer:** Receives raw sensor data  
+- **SensoryCortexModule:** Processes vision, audio, tactile data  
+- **DecisionModule:** Chooses actions via RL / ANN / SNN  
+- **MotorCortexModule:** Converts decisions to motor commands  
+- **MemoryModule:** Short-term (RAM) + long-term (SSD)  
+- **LearningModule:** Hebbian or gradient-based learning  
+
+---
+
+## Sensors
+| Type | Purpose | Notes |
+|------|---------|-------|
+| Camera | Vision | Object detection, navigation |
+| Microphone | Audio | Voice commands, awareness |
+| LiDAR | Obstacle detection | 3D mapping |
+| IMU | Balance/orientation | Keeps Neurobot stable |
+| Tactile | Touch feedback | Grasping, collision |
+| Temp / Gas | Environmental | Safety monitoring |
+
+---
+
+## Actuators
+- Wheels / Motors / Tracks: Locomotion  
+- Servo arms / Grippers: Manipulation  
+- LEDs / Sounds: Feedback  
+- Optional drone propellers
+
+---
+
+## Learning & Intelligence
+- Object recognition: CNN  
+- Decision-making: RL  
+- Memory / pattern recall: LSTM / GRU / SNN  
+
+**Pipeline:**  
 
 </p>
 
