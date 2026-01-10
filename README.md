@@ -1,6 +1,4 @@
-
 ⸻
-
 
 # NeomindAI Deluxe Documentation
 
