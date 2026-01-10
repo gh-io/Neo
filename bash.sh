@@ -1,3 +1,4 @@
+
 nix-env --install autoconf automake libtool pkg-config
 brew install autoconf automake libtool pkg-config
 sudo port install gettext autoconf automake libtool pkgconfig
@@ -61,7 +62,7 @@ $ truss init hello-world
 ? 📦 Name this model: HelloWorld
 Truss HelloWorld was created in ~/hello-world
 
-`
+'
 touch Brain/README.md Brain/LICENSE Brain/pyproject.toml Brain/requirements.txt
 touch Brain/config/default.yaml
 touch Brain/brain/__init__.py
@@ -74,7 +75,7 @@ touch Brain/examples/run_lidar_example.py Brain/examples/run_snn_example.py
 touch Brain/tests/test_sensors.py Brain/tests/test_models.py Brain/tests/test_swarm.py
 touch Brain/docker/Dockerfile
 touch Brain/scripts/run_simulation.py
-’
+
 
 curl https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -187,3 +188,6 @@ node -v # Should print "v24.11.0".
 
 # Verify npm version:
 npm -v # Should print "11.6.1".
+npx create-next-app neomindai-docs
+cd neomindai-docs
+npm install @next/mdx @mdx-js/loader prism-react-renderer
