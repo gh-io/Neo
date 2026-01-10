@@ -1,0 +1,19 @@
+---
+
+# 📁 `docs/architecture/sensors.mdx`
+
+```mdx
+# Sensors & Perception
+
+NeomindAI supports heterogeneous sensor fusion.
+
+## Supported Sensors
+
+| Sensor | Purpose | Interface |
+|------|--------|----------|
+| RGB / Depth Camera | Vision & detection | OpenCV |
+| LiDAR / Ultrasonic | Mapping & avoidance | ROS2 / SLAM |
+| IMU | Orientation & balance | I2C / SPI |
+| Tactile sensors | Collision detection | GPIO / ADC |
+
+Sensor data is normalized and fed into the neural decision engine as structured state vectors.
