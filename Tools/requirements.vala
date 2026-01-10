@@ -3,7 +3,7 @@
 # Numeric, array, and scientific libs
 numpy
 scipy
-
+ 
 # Computer vision & image processing
 opencv-python-headless
 pillow
